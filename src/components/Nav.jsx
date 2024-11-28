@@ -6,6 +6,7 @@ const Nav = ({ minimal, authToken, setShowModel, showModel, setIsSignup }) => {
     setShowModel(true);
     setIsSignup(false)
   };
+  const authToken = true
   return (
     <nav>
       <div className="logo-container">
