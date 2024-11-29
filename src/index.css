@@ -12,12 +12,12 @@ body {
 h1 {
   font-family: "Montserrat", sans-serif;
 }
-h2{
-    font-style: italic;
+h2 {
+  font-style: italic;
 }
-.primary-title{
-    font-size: 90px;
-    color: rgb(255, 255, 255);
+.primary-title {
+  font-size: 90px;
+  color: rgb(255, 255, 255);
 }
 .Primary-button {
   color: white;
@@ -32,20 +32,20 @@ h2{
 .Primary-button:hover {
   background: linear-gradient(260deg, rgb(254, 48, 114), rgb(255, 89, 64));
 }
-.secondary-button{
-    color: rgb(121.119,119);
-    background-color: rgb(255, 255, 255);
-    font-weight: 500;
-    font-size: 15px;
-    text-transform: uppercase;
-    padding: 12px 30px;
-    border-radius: 30px;
-    border: solid 2px rgb(121.119,119);
-    margin: 4px;
+.secondary-button {
+  color: rgb(121.119, 119);
+  background-color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: solid 2px rgb(121.119, 119);
+  margin: 4px;
 }
-.secondary-button:hover{
-    color: rgb(48,48,48);
-    border: solid 2px rgb(48,48,48);
+.secondary-button:hover {
+  color: rgb(48, 48, 48);
+  border: solid 2px rgb(48, 48, 48);
 }
 /* -----navBar--- */
 .logo {
@@ -67,8 +67,8 @@ nav .nav-button {
   border: none;
 }
 nav .nav-button:disabled {
-    background-color: rgba(189, 180, 180, 0.422);
-    color: rgb(160, 38, 75);
+  background-color: rgba(189, 180, 180, 0.422);
+  color: rgb(160, 38, 75);
 }
 nav .logo.container {
   width: 170px;
@@ -84,13 +84,14 @@ nav .logo.container .logo {
   height: 100vh;
   position: fixed;
   background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.65) 0%,
-    rgba(0, 0, 0, 0) 100%
-  ), url('images/male2.jpg')
+      to bottom,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("images/male2.jpg");
 }
-.Home{
-    margin-top: 30vh;
+.Home {
+  margin-top: 30vh;
 }
 
 /* ----AUto Model----- */
@@ -107,16 +108,60 @@ nav .logo.container .logo {
   border-radius: 10px;
   padding: 40px;
 }
-.auth-model .close-icon{
-    float: right;
+.auth-model .close-icon {
+  float: right;
 }
-.auth-model form{
-    display: flex;
-    flex-direction: column;
+.auth-model form {
+  display: flex;
+  flex-direction: column;
 }
-.auth-model input[type=password],
-.auth-model input[type=email]{
-    padding: 8px;
-    margin: 8px;
-    font-size: 17px;
+.auth-model input[type="password"],
+.auth-model input[type="email"] {
+  padding: 8px;
+  margin: 8px;
+  font-size: 17px;
+}
+
+/* ---- onboarding page --- */
+.onBoarding form {
+  display: flex;
+  justify-content: center;
+}
+.onBoarding form section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 35%;
+}
+.onBoarding form input {
+  padding: 15px 30px;
+  margin: 10px 0;
+  font-size: 15px;
+  border: 2px solid rgb(219, 219, 219);
+  border-radius: 10px;
+}
+/* .onBoarding form input {
+  text-decoration: none;
+} */
+
+.onBoarding form label{
+  margin: 10px 0;
+}
+
+.onBoarding form .multiple-input-container {
+  display: flex;
+  flex-direction: row;
+}
+.onBoarding form .multiple-input-container input {
+  margin-right: 10px;
+}
+.onBoarding form .multiple-input-container label {
+  padding: 10px;
+  border: solid 2px rgb(144,144,144);
+  border-radius: 10px;
+  transition: all 0.3s;
+  margin-right: 10px;
+}
+.onBoarding form .multiple-input-container input[type="radio"]{
+  display: none;
 }

@@ -1,12 +1,12 @@
 import whiteLogo from '../images/cK.png'
 import secondLogo from '../images/white.png'
 
-const Nav = ({ minimal, authToken, setShowModel, showModel, setIsSignup }) => {
+const Nav = ({ minimal, setShowModel, showModel, setIsSignup }) => {
   const handleClick = () => {
     setShowModel(true);
     setIsSignup(false)
   };
-  const authToken = true
+  const authToken = false
   return (
     <nav>
       <div className="logo-container">
