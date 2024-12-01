@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ChatContainer from "./chatContainer";
 
 const AuthModel = ({ setShowModel, isSignup }) => {
 
@@ -35,7 +36,7 @@ const AuthModel = ({ setShowModel, isSignup }) => {
       <h2>{isSignup ? "CREATE ACCOUNT" : "LOG In"}</h2>
       <p>
         {" "}
-        By clicking lof in, you agree to our terms.learn how we process your
+        By clicking Submit, you agree to our terms.learn how we process your
         data in our privacy policy and cookie policy.{" "}
       </p>
       <form onSubmit={handleSubmit}>

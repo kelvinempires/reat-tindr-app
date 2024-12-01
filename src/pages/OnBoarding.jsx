@@ -2,12 +2,33 @@ import { useState } from "react";
 import Nav from "../components/Nav";
 
 const OnBoarding = () => {
+  const [fromData, setFromData] = useState({
+    user_id: "",
+    first_name: "",
+    dob_day: "",
+    dob_month: "",
+    dob_year: "",
+    show_gender: "false",
+    gender_identity: "man",
+    gender_interest: "woman",
+    email: "",
+    url: "",
+    about: "",
+    matches: [],
+  });
   const handleSubmit = () => {
     console.log("subtitle");
   };
-  const handleChange = () => {
-    console.log("change");
+  const handleChange = (e) => {
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    const name = e.target.name;
+
+    setFromData ((prevState) => ({
+      ...prevState,
+      [name] : value
+    }));
   };
+  console.log(fromData)
   return (
     <>
       <Nav minimal={true} setShowModel={() => {}} showModel={false} />
@@ -23,7 +44,7 @@ const OnBoarding = () => {
               name="first_name"
               placeholder="First Name"
               required={true}
-              value={""}
+              value={fromData.first_name}
               onChange={handleChange}
             />
             <label>Birth Day</label>
@@ -34,7 +55,7 @@ const OnBoarding = () => {
                 name="dob_day"
                 placeholder="DD"
                 required={true}
-                value={""}
+                value={fromData.dob_day}
                 onChange={handleChange}
               />
               <input
@@ -43,7 +64,7 @@ const OnBoarding = () => {
                 name="dob_month"
                 placeholder="MM"
                 required={true}
-                value={""}
+                value={fromData.dob_month}
                 onChange={handleChange}
               />
               <input
@@ -52,7 +73,7 @@ const OnBoarding = () => {
                 name="dob_year"
                 placeholder="YYYY"
                 required={true}
-                value={""}
+                value={fromData.dob_year}
                 onChange={handleChange}
               />
             </div>
@@ -61,10 +82,10 @@ const OnBoarding = () => {
               <input
                 id="man-gender-identity"
                 type="radio"
-                name="man-gender-identity"
+                name="gender_identity"
                 value="man"
                 onChange={handleChange}
-                checked={false}
+                checked={fromData.gender_identity === "man"}
               />
               <label htmlFor="man-gender-identity">Man</label>
               <input
@@ -73,56 +94,58 @@ const OnBoarding = () => {
                 name="gender_identity"
                 value="woman"
                 onChange={handleChange}
-                checked={false}
+                checked={fromData.gender_identity === "woman"}
               />
               <label htmlFor="woman-gender-identity">Woman</label>
               <input
                 id="more-gender-identity"
                 type="radio"
-                name="gender-identity"
+                name="gender_identity"
                 value="more"
                 onChange={handleChange}
-                checked={false}
+                checked={fromData.gender_identity === "more"}
               />
               <label htmlFor="more-gender-identity">More</label>
             </div>
             <label htmlFor="show-gender">show gender on my profile</label>
-            <input
-              id="show-gender-"
-              type="checkbox"
-              name="show-gender"
-              onChange={handleChange}
-              checked={false}
-            />
+            <div className="multiple-input-container">
+              <input
+                id="show-gender"
+                type="checkbox"
+                name="show_gender"
+                onChange={handleChange}
+                checked={fromData.show_gender}
+              />
+            </div>
             <label>show Me</label>
             <div className="multiple-input-container">
               <input
                 id="man-gender-interest"
                 type="radio"
-                name="gender-interest"
+                name="gender_interest"
                 value="man"
                 onChange={handleChange}
-                checked={false}
+                checked={fromData.gender_interest === "man"}
               />
               <label htmlFor="man-gender-interest">Man</label>
               <input
                 id="woman-gender-interest"
                 type="radio"
-                name="gender-interest"
+                name="gender_interest"
                 value="woman"
                 onChange={handleChange}
-                checked={false}
+                checked={fromData.gender_interest === "woman"}
               />
               <label htmlFor="woman-gender-interest">Woman</label>
               <input
                 id="everyone-gender-interest"
                 type="radio"
-                name="gender-interest"
+                name="gender_interest"
                 value="everyone"
                 onChange={handleChange}
-                checked={false}
+                checked={fromData.gender_interest === "everyone"}
               />
-              <label htmlFor="everyone-gender-identity">Everyone</label>
+              <label htmlFor="everyone-gender-interest">Everyone</label>
             </div>
 
             <label htmlFor="about">About me</label>
@@ -132,7 +155,7 @@ const OnBoarding = () => {
               name="about"
               required={true}
               placeholder="i like long walks..."
-              value={""}
+              value={fromData.about}
               onChange={handleChange}
             />
             <input type="submit" />
@@ -147,9 +170,8 @@ const OnBoarding = () => {
               onChange={handleChange}
               required={true}
             />
-            <div className="photo-container">
-
-            </div>
+            <div className="photo-container"></div>
+            <img src={fromData.url} alt="profile pic preview" />
           </section>
         </form>
       </div>

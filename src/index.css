@@ -107,6 +107,24 @@ nav .logo.container .logo {
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 40px;
+  background: linear-gradient(
+    45deg,
+    rgb(16, 21, 36),
+    rgb(34, 23, 150),
+    rgb(182, 154, 183),
+    rgb(166, 75, 184),
+    rgb(96, 5, 3)
+  );
+}
+.auth-model:hover {
+  background: linear-gradient(
+    260deg,
+    rgb(96, 5, 3),
+    rgb(166, 75, 184),
+    rgb(182, 154, 183),
+    rgb(34, 23, 150),
+    rgb(16, 21, 36)
+  );
 }
 .auth-model .close-icon {
   float: right;
@@ -123,6 +141,9 @@ nav .logo.container .logo {
 }
 
 /* ---- onboarding page --- */
+.onBoarding {
+  border-top: solid 1px rgb(154, 154, 154);
+}
 .onBoarding form {
   display: flex;
   justify-content: center;
@@ -132,6 +153,7 @@ nav .logo.container .logo {
   flex-direction: column;
   padding: 20px;
   width: 35%;
+  text-align: start;
 }
 .onBoarding form input {
   padding: 15px 30px;
@@ -144,7 +166,7 @@ nav .logo.container .logo {
   text-decoration: none;
 } */
 
-.onBoarding form label{
+.onBoarding form label {
   margin: 10px 0;
 }
 
@@ -157,11 +179,63 @@ nav .logo.container .logo {
 }
 .onBoarding form .multiple-input-container label {
   padding: 10px;
-  border: solid 2px rgb(144,144,144);
+  border: solid 2px rgb(144, 144, 144);
   border-radius: 10px;
   transition: all 0.3s;
   margin-right: 10px;
 }
-.onBoarding form .multiple-input-container input[type="radio"]{
+.onBoarding form input[type="radio"] {
   display: none;
 }
+.onBoarding form input[type="number"] {
+  width: 10%;
+}
+.onBoarding form input[type="radio"]:checked + label {
+  border: solid 2px rgb(221, 39, 22);
+}
+.onBoarding form input[type="submit"]:hover {
+  background-color: rgb(255, 255, 255);
+}
+.onBoarding form input[type="submit"]:active {
+  background-color: rgb(226, 115, 155);
+}
+.onBoarding form .photo-container {
+  width: 100%;
+}
+/* ---dashBoard--- */
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard .swiper-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.swipe {
+  position: absolute;
+}
+.dashboard .card-container {
+  width: 400px;
+  height: 550px;
+}
+.card {
+  width: 400px;
+  height: 550px;
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+.dashboard .swipe-info {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+/* ---chat container---- */
